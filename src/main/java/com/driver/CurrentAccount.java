@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class CurrentAccount extends BankAccount{
-    String tradeLicenseId; //consists of Uppercase English characters only
+    private String tradeLicenseId; //consists of Uppercase English characters only
 
     public CurrentAccount(String name, double balance, String tradeLicenseId) throws Exception {
         // minimum balance is 5000 by default. If balance is less than 5000, throw "Insufficient Balance" exception
@@ -41,4 +41,7 @@ public class CurrentAccount extends BankAccount{
         return true;
     }
 
+    public String getTradeLicenseId() {
+        return tradeLicenseId;
+    }
 }
