@@ -14,7 +14,7 @@ public class Main {
         System.out.println(bankAccount.generateAccountNumber(5,44));
 
 
-        SavingsAccount savingsAccount=new SavingsAccount("e3",4000,10000,8.5);
+        SavingsAccount savingsAccount=new SavingsAccount("e3",40000,10000,8.5);
         savingsAccount.withdraw(3000);
         savingsAccount.withdraw(1000);
         System.out.println(savingsAccount.getSimpleInterest(5));

@@ -2,6 +2,7 @@ package com.driver;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 
 public class CurrentAccount extends BankAccount{
     private String tradeLicenseId; //consists of Uppercase English characters only
@@ -10,7 +11,7 @@ public class CurrentAccount extends BankAccount{
         // minimum balance is 5000 by default. If balance is less than 5000, throw "Insufficient Balance" exception
         super(name,balance,5000);
         if(balance<5000) throw new Exception("Insufficient Balance");
-        this.tradeLicenseId=tradeLicenseId;
+        this.tradeLicenseId=tradeLicenseId.toUpperCase();
     }
 
     public void validateLicenseId() throws Exception {

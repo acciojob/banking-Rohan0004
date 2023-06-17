@@ -16,7 +16,7 @@ public class SavingsAccount extends BankAccount{
         // 1. "Maximum Withdraw Limit Exceed" : If the amount exceeds maximum withdrawal limit
         // 2. "Insufficient Balance" : If the amount exceeds balance
         if(amount>this.maxWithdrawalLimit) throw new Exception("Maximum Withdraw Limit Exceed");
-        if (amount>getBalance()) throw new Exception("Insufficient Balance");
+        if (getBalance()-amount<0) throw new Exception("Insufficient Balance");
         setBalance(getBalance()-amount);
 
     }
@@ -28,6 +28,7 @@ public class SavingsAccount extends BankAccount{
 
     public double getCompoundInterest(int times, int years){
         // Return the final amount considering that bank gives compound interest on current amount given times per year
+        if (times==0) throw new ArithmeticException();
         return getBalance()*Math.pow((1+this.rate/times),(years*times));
     }
 
