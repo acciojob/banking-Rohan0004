@@ -11,7 +11,7 @@ public class Main {
 
 
         BankAccount bankAccount=new BankAccount("e2",6000,3000);
-        System.out.println(bankAccount.generateAccountNumber(5,44));
+        System.out.println(bankAccount.generateAccountNumber(5,27));
 
 
         SavingsAccount savingsAccount=new SavingsAccount("e3",40000,10000,8.5);

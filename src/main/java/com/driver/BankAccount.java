@@ -24,10 +24,10 @@ public class BankAccount {
         String ans="";
         for (int i = digits; i > 0; i--) {
             if(sum>9){
-                ans="9"+ans;
+                ans=ans+"9";
                 sum-=9;
             }else{
-                ans=sum+ans;
+                ans=ans+sum;
                 sum=0;
             }
         }

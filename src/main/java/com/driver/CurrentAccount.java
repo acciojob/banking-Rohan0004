@@ -32,7 +32,7 @@ public class CurrentAccount extends BankAccount{
             freq[ch-'A']++;
             maxFreq=Math.max(maxFreq,freq[ch-'A']);
         }
-        return maxFreq <= (tradeLicenseId.length()/2);
+        return maxFreq <= (tradeLicenseId.length()+1/2);
 
     }
     public boolean isValidLicenseId(){
