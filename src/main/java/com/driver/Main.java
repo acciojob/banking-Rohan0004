@@ -2,7 +2,7 @@ package com.driver;
 
 public class Main {
     public static void main(String[] args) throws Exception{
-        CurrentAccount currentAccount=new CurrentAccount("abc",5000,"AABCDERRRHHYLL");
+        CurrentAccount currentAccount=new CurrentAccount("abc",5000,"AABAAAAaAAAAAACDERRRHHYLL");
         System.out.println(currentAccount.isValidLicenseId());
 //        currentAccount.validateLicenseId();
         currentAccount.deposit(500);

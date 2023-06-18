@@ -36,7 +36,7 @@ public class CurrentAccount extends BankAccount{
                 maxFreqChar=ch;
             }
         }
-        if( maxFreq > (tradeLicenseId.length()+1/2)) return false;
+        if( maxFreq > (tradeLicenseId.length()+1)/2) return false;
         char arr[]=new char[tradeLicenseId.length()];
         int i=0;
         while(maxFreq-->0){
