@@ -27,12 +27,35 @@ public class CurrentAccount extends BankAccount{
     public boolean isPossibleToMakeValid(){
         int freq[]=new int[26];
         int maxFreq=0;
+        char maxFreqChar='A';
         for (int i = 0; i < tradeLicenseId.length(); i++) {
             char ch=tradeLicenseId.charAt(i);
             freq[ch-'A']++;
-            maxFreq=Math.max(maxFreq,freq[ch-'A']);
+            if(maxFreq<freq[ch-'A']){
+                maxFreq=freq[ch-'A'];
+                maxFreqChar=ch;
+            }
         }
-        return maxFreq <= (tradeLicenseId.length()+1/2);
+        if( maxFreq > (tradeLicenseId.length()+1/2)) return false;
+        char arr[]=new char[tradeLicenseId.length()];
+        int i=0;
+        while(maxFreq-->0){
+            arr[i]=maxFreqChar;
+            i+=2;
+        }
+        freq[maxFreqChar-'A']=0;
+        for(int j=0;j<26;j++){
+
+            while(freq[j]-->0){
+                if(i>=arr.length){
+                    i=1;
+                }
+                arr[i]=(char)('A'+j);
+                i+=2;
+            }
+        }
+        tradeLicenseId=String.valueOf(arr);
+        return true;
 
     }
     public boolean isValidLicenseId(){
